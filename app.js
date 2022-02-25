@@ -15,7 +15,7 @@ mongoose.connect(DB)
         console.log(err)
     })
 
-app.get('/', (rer, res) => {
+app.get('/', (req, res) => {
     res.send('Server is working')
 })
 
