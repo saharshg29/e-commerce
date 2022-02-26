@@ -1,332 +1,111 @@
-import React from 'react';
-import {
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBTooltip,
-  MDBCarousel,
-  MDBCarouselInner,
-  MDBCarouselItem,
-} from 'mdbreact';
+import React from "react";
 
-const Buyer = () => {
+export default function Buyer() {
   return (
-    <section className='text-center my-5'>
-      <h2 className='h1-responsive font-weight-bold text-center my-5'>Our bestsellers</h2>
-      <p className='grey-text text-center w-responsive mx-auto mb-5'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis
-        totam voluptas nostrum quisquam eum porro a pariatur veniam.
-      </p>
-      <MDBCarousel activeItem={1} length={3} slide={true} showControls={true} showIndicators={true} multiItem>
-        <MDBCarouselInner>
-          <MDBRow>
-            <MDBCarouselItem itemId='1'>
-              <MDBCol md='4'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage
-                    cascade
-                    top
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(39).webp'
-                    alt='sample photo'
-                  />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Shoes</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Leather boots</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>69$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-              <MDBCol md='4' className='clearfix d-none d-md-block'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage
-                    cascade
-                    top
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(22).webp'
-                    alt='sample photo'
-                  />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Jeans</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Slim jeans</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>99$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-              <MDBCol md='4' className='clearfix d-none d-md-block'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage cascade top src='https://mdbootstrap.com/img/Photos/Others/img%20(31).webp' alt='sample photo' />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Shorts</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Denim shorts</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>49$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBCarouselItem>
-            <MDBCarouselItem itemId='2'>
-              <MDBCol md='4'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage
-                    cascade
-                    top
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(30).webp'
-                    alt='sample photo'
-                  />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Shoes</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Leather boots</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>69$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-              <MDBCol md='4' className='clearfix d-none d-md-block'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage
-                    cascade
-                    top
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(37).webp'
-                    alt='sample photo'
-                  />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Jeans</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Slim jeans</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>99$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-              <MDBCol md='4' className='clearfix d-none d-md-block'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage cascade top src='https://mdbootstrap.com/img/Photos/Others/img%20(35).webp' alt='sample photo' />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Shorts</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Denim shorts</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>49$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBCarouselItem>
-            <MDBCarouselItem itemId='3'>
-              <MDBCol md='4'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage
-                    cascade
-                    top
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(32).webp'
-                    alt='sample photo'
-                  />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Shoes</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Leather boots</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>69$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-              <MDBCol md='4' className='clearfix d-none d-md-block'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage
-                    cascade
-                    top
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(33).webp'
-                    alt='sample photo'
-                  />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Jeans</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Slim jeans</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>99$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-              <MDBCol md='4' className='clearfix d-none d-md-block'>
-                <MDBCard narrow ecommerce className='mb-2'>
-                  <MDBCardImage cascade top src='https://mdbootstrap.com/img/Photos/Others/img%20(38).webp' alt='sample photo' />
-                  <MDBCardBody cascade>
-                    <a href='#!' className='text-muted'>
-                      <h5>Shorts</h5>
-                    </a>
-                    <MDBCardTitle>
-                      <strong>
-                        <a href='#!'>Denim shorts</a>
-                      </strong>
-                    </MDBCardTitle>
-                    <MDBCardText>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci.</MDBCardText>
-                    <MDBCardFooter className='px-1'>
-                      <span className='float-left'>49$</span>
-                      <span className='float-right'>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-eye mr-3' />
-                          <span>Quick Look</span>
-                        </MDBTooltip>
-                        <MDBTooltip domElement placement='top'>
-                          <i className='grey-text fa fa-heart' />
-                          <span>Add to Whishlist</span>
-                        </MDBTooltip>
-                      </span>
-                    </MDBCardFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBCarouselItem>
-          </MDBRow>
-        </MDBCarouselInner>
-      </MDBCarousel>
-    </section>
-  );
-};
+    <>
+      <section class="vh-100" style={{ backgroundColor: "#eee" }}>
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+              <div class="card text-black" style={{ borderRadius: "25px;" }}>
+                <div class="card-body p-md-5">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                        Sign up
+                      </p>
 
-export default Buyer;
+                      <form class="mx-1 mx-md-4">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              type="text"
+                              id="form3Example1c"
+                              class="form-control"
+                            />
+                            <label class="form-label" for="form3Example1c">
+                              Your Name
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              type="email"
+                              id="form3Example3c"
+                              class="form-control"
+                            />
+                            <label class="form-label" for="form3Example3c">
+                              Your Email
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              type="password"
+                              id="form3Example4c"
+                              class="form-control"
+                            />
+                            <label class="form-label" for="form3Example4c">
+                              Password
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input
+                              type="password"
+                              id="form3Example4cd"
+                              class="form-control"
+                            />
+                            <label class="form-label" for="form3Example4cd">
+                              Repeat your password
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-5">
+                          <input
+                            class="form-check-input me-2"
+                            type="checkbox"
+                            value=""
+                            id="form2Example3c"
+                          />
+                          <label class="form-check-label" for="form2Example3">
+                            I agree all statements in{" "}
+                            <a href="#!">Terms of service</a>
+                          </label>
+                        </div>
+
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <button type="button" class="btn btn-primary btn-lg">
+                            Register
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                        class="img-fluid"
+                        alt="design"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

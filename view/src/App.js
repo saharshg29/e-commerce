@@ -1,18 +1,27 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Buyer from './Component/Signup/Buyer'
+import Buyer from "./Component/Signup/Buyer";
+import Normal from "./Component/Navbar/Normal";
+import Footer from "./Component/Footer";
 
 function App() {
   return (
     <>
-      <Buyer></Buyer>
-      {/* <div className="sticky-top border mb-2">Top Bar</div>
-      <div className="row border">
-        <div className="col-md  border  ">Left bar </div>
-        <div className="col-md-8 border">Main bar </div>
-        <div className="col-md  border ">Right bar </div>
+      <div className="row">
+        <div className="sticky-top border mb-2">
+          <Normal></Normal>
+        </div>
+        <div className="row">
+          <div className="col-md-2">Left</div>
+          <div className="col-md-8">
+            <Buyer></Buyer>
+          </div>
+          <div className="col-md-2">Right</div>
+        </div>
+        <div className="sticky-bottom border mt-2">
+          <Footer></Footer>
+        </div>
       </div>
-      <div className="sticky-bottom border mt-2">Footer </div> */}
     </>
   );
 }
