@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const { ObjectId } = mongoose.Schema.Types
-const Seller = require('./seller');
-const Product = require('./product')
+// const Seller = require('./seller');
+// const Product = require('./product')
 
 
 const buyerSchema = new mongoose.Schema({
@@ -27,17 +26,17 @@ const buyerSchema = new mongoose.Schema({
     },
     following: [
         {
-            type: ObjectId,
+            type: String,
             ref: Seller
         }
     ],
     orderHistory: [
         {
-            type: ObjectId,
+            type: String,
             ref: Product,
         }
     ]
 })
 
-const buyerModel = mongoose.model("Buyer", buyerSchema)
+let buyerModel = mongoose.model("Buyer", buyerSchema)
 exports.Buyer = buyerModel;
