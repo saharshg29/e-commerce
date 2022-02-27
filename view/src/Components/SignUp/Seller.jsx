@@ -3,8 +3,8 @@ import React from "react";
 export default function Seller() {
   return (
     <>
-      <section style={{ backgroundColor: "#eee" }}>
-        <div class="container h-100">
+      <section className="h-100" style={{ backgroundColor: "#eee" }}>
+        <div class="container h-100 pt-5">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">
               <div class="card text-black" style={{ borderRadius: "25px;" }}>

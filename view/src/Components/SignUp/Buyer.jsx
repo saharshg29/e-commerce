@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Buyer() {
+  let navigate = useNavigate();
   return (
     <>
-      <section style={{ backgroundColor: "#eee" }}>
-        <div class="container h-100">
+      <section className="h-100" style={{ backgroundColor: "#eee" }}>
+        <div class="container h-100 pt-5">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">
               <div class="card text-black" style={{ borderRadius: "25px;" }}>
@@ -77,6 +79,31 @@ export default function Buyer() {
                             Register
                           </button>
                         </div>
+
+                        <span>
+                          <p>
+                            <h6 className="text-primary">
+                              Want to sell with us?
+                              <h5
+                                className="btn"
+                                style={{ display: "inline" }}
+                                onClick={() => navigate("/add-seller")}
+                              >
+                                Join
+                              </h5>
+                            </h6>
+                            <h5 className="text-primary">
+                              Already have an account?
+                              <h4
+                                className="btn"
+                                style={{ display: "inline" }}
+                                onClick={() => navigate("/signin")}
+                              >
+                                Log In
+                              </h4>
+                            </h5>
+                          </p>
+                        </span>
                       </form>
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

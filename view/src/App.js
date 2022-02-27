@@ -1,14 +1,14 @@
 import "./App.css";
-import Buyer from "./Components/SignUp/Buyer";
-import Normal from "./Components/Navbar/Normal";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Components/Footer";
+import General from "./Screens/General/General";
 
 function App() {
   return (
     <>
       <div>
-        <Normal></Normal>
-        <Buyer></Buyer>
+        
+        <General />
         <Footer />
       </div>
     </>
