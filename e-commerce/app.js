@@ -1,13 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const URI = require('./KEY')
+const DB = require('./KEY')
 
-const app = express()
-const PORT = process.env.PORT || 5000;
+const URI = DB.URI
 
-const DB = URI.URI
-
-mongoose.connect(DB)
+mongoose.connect(URI)
     .then(() => {
         console.log('Conneection with mongo Db established')
     })
@@ -15,11 +12,14 @@ mongoose.connect(DB)
         console.log(err)
     })
 
+const app = express();
+
+
+
 app.get('/', (req, res) => {
-    res.send('Server is working')
+    res.send('connected')
 })
 
-
-app.listen(PORT, () => {
-    console.log(`Server is working on ${PORT}`)
+app.listen(5000, () => {
+    console.log('working')
 })
