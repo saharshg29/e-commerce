@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 const { ObjectId } = mongoose.Schema.Types
-const Buyer = require('./buyer')
+const Buyer = require('./Buyer')
+const Product = require('./Product')
 
-const sellerSchema = new mongoose.Schema({
+
+const sellerModel = mongoose.model("Seller", {
     name: {
         type: String,
         required: true
@@ -36,6 +38,4 @@ const sellerSchema = new mongoose.Schema({
         }
     ]
 })
-
-const sellerModel = mongoose.model("Seller", sellerSchema)
 exports.Seller = sellerModel;

@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
-// const Seller = require('./seller');
-// const Product = require('./product')
+const Seller = require('./Seller');
+const Product = require('./Product')
 
 
-const buyerSchema = new mongoose.Schema({
+
+let buyerModel = mongoose.model("Buyer", {
     name: {
         type: String,
         required: true
@@ -37,6 +38,4 @@ const buyerSchema = new mongoose.Schema({
         }
     ]
 })
-
-let buyerModel = mongoose.model("Buyer", buyerSchema)
 exports.Buyer = buyerModel;
