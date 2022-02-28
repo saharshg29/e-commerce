@@ -7,11 +7,11 @@ import Buyer from "./Screens/Buyer/App";
 function App() {
   return (
     <>
-      {/* <div>
+      <div>
         
         <General />
        
-      </div> */}
+      </div>
 
 
       <Buyer />
