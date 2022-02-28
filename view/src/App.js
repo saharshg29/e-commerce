@@ -14,7 +14,7 @@ function App() {
       </div>
 
 
-      <Buyer />
+      {/* <Buyer /> */}
       <Footer />
     </>
   );
