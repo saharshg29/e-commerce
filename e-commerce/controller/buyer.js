@@ -1,0 +1,53 @@
+const express = require('express')
+const router = express.Router()
+const mongoose = require('mongoose')
+const Customer = mongoose.model('Customer')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
+
+router.get('/', (req, res) => {
+    res.send("this page is exculusively for buyeres")
+})
+
+router.post('/add', (req, res) => {
+    const { name, email, password, username, mobilenumber, accountype } = req.body
+    if (!email || !name || !username || !mobilenumber) {
+        return res.json({ error: "Please fill up all the fields" })
+    }
+    else {
+        Customer.findById((email || username) && accountype)
+            .then(savedUser => {
+                if (savedUser) {
+                    return res.json({ error: "User already exist" })
+                }
+                else {
+                    bcrypt.hash(password, 12)
+                        .then(hashedPassword => {
+                            const customer = new Customer({
+                                name,
+                                email,
+                                hashedPassword,
+                                username,
+                                mobilenumber,
+                                accountype
+                            })
+                            customer.save()
+                                .then(user => {
+                                    res.status(200).json({ user })
+                                })
+                                .catch(err => {
+                                    console.log(err)
+                                })
+                        })
+                }
+            }).catch(err => {
+                console.log(err)
+            })
+    }
+})
+// router.get()
+// router.put()
+// router.delete()
+
+module.exports = router
