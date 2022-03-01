@@ -13,5 +13,21 @@ module.exports = mongoose.model("Product", new mongoose.Schema({
     owner: [{
         type: ObjectID,
         ref: "Customer"
-    }]
+    }],
+    description: {
+        type: String,
+        required: true
+    },
+    likes: [
+        {
+            type: ObjectID,
+            ref: "Customer"
+        }
+    ],
+    orders: [
+        {
+            type: ObjectID,
+            ref: "Customer"
+        }
+    ],
 }))
