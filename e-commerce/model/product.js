@@ -10,8 +10,8 @@ module.exports = mongoose.model("Product", new mongoose.Schema({
         type: Number,
         required: true
     },
-    owner: {
-        type: Obj
-
-    }
+    owner: [{
+        type: ObjectID,
+        ref: "Customer"
+    }]
 }))
