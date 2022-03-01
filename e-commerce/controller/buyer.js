@@ -5,11 +5,7 @@ const Customer = mongoose.model('Customer')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-
-router.get('/', (req, res) => {
-    res.send("this page is exculusively for buyeres")
-})
-
+//USER SIGNUP --
 router.post('/add', (req, res) => {
     const { name, email, password, username, mobilenumber, accountype } = req.body
     if (!email || !name || !username || !mobilenumber) {
@@ -27,7 +23,7 @@ router.post('/add', (req, res) => {
                             const customer = new Customer({
                                 name,
                                 email,
-                                hashedPassword,
+                                password: hashedPassword,
                                 username,
                                 mobilenumber,
                                 accountype
@@ -46,8 +42,63 @@ router.post('/add', (req, res) => {
             })
     }
 })
-// router.get()
-// router.put()
+
+// GET EDITING USER PROFILE
+router.put('/edit/:id', (req, res) => {
+    const id = req.params.id
+    const { name, email, password, username, mobilenumber } = req.body
+    Customer.findByIdAndUpdate(
+        { _id: id },
+        {
+            $set: {
+                name, email, password, username, mobilenumber
+            }
+        },
+        { new: true }
+    )
+        .then(updated => {
+            res.status(200).json({ updated })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+})
+
+
+{
+    // router.post('/signin', (req, res) => {
+    //     const { email, password } = req.body
+    //     console.log("log in deails", req.body)
+    //     if (!email || !password) {
+    //         console.log('email', email)
+    //         return res.json({ error: "email or password is wrong" })
+    //     }
+
+    //     User.findOne({ email: email })
+    //         .then(savedUser => {
+    //             if (!savedUser) {
+    //                 res.status(400).json({ err: "User does not exist" })
+    //             }
+    //             bcrypt.compare(password, savedUser.password)
+    //                 .then(doMatch => {
+    //                     if (doMatch) {
+    //                         const token = jwt.sign({ _id: savedUser._id }, JWT_TOKEN)
+    //                         const { _id, name, email, followers, following, pic } = savedUser
+    //                         res.json({ token, user: { _id, name, email, followers, following } })
+    //                     }
+    //                     else {
+    //                         return res.status(422).json({ error: "Invalid Email or passwoord" })
+    //                     }
+    //                 })
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // })
+}
+
+
 // router.delete()
 
 module.exports = router
