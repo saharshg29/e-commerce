@@ -18,18 +18,17 @@ router.post('/signin', (req, res) => {
                     res.status(400).json({ msg: "User does not found" })
                 }
                 else {
-                    bcrypt.compare(password, user.password)
-                        .then(matched => {
-                            if (matched) {
-                                const token = jwt.sign({ _id: user._id }, "tokyo@json")
-                                const { _id, name, email, username } = user
-                                res.json({ token, student: { _id, name, email, username } })
-                            }
-                            else {
-                                return res.status(422).json({ error: "Login failed due to incorrect email or passwprd" })
-                            }
+                    bcrypt.compare(password, user.password, (matched) => {
+                        if (matched) {
+                            const token = jwt.sign({ _id: user._id }, "tokyo@json")
+                            const { _id, name, email, username } = user
+                            res.json({ token, student: { _id, name, email, username } })
+                        }
+                        else {
+                            return res.status(422).json({ error: "Login failed due to incorrect email or passwprd" })
+                        }
+                    })
 
-                        })
                 }
             })
             .catch(err => {
