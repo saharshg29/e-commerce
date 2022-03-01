@@ -21,6 +21,7 @@ require('./model/product')
 const buyer = require('./controller/buyer')
 const seller = require('./controller/seller')
 const product = require('./controller/product')
+const login = require('./controller/login')
 
 
 const app = express()
@@ -29,6 +30,7 @@ app.use(express.json())
 
 app.use('/buyer', buyer)
 app.use('/seller', seller)
+app.use('', login)
 
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`)
