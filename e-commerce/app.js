@@ -11,6 +11,9 @@ mongoose.connect(URI.URI)
         console.error(err)
     })
 
+require('./model/customer')
+require('./model/product')
+
 const app = express()
 
 app.get('/', (req, res) => {
