@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const PORT = process.env.PORT || 5000
 const URI = require('./Key')
 
+
+
 mongoose.connect(URI.URI)
     .then(() => {
         console.log("Connected to MongoDB")
@@ -11,14 +13,21 @@ mongoose.connect(URI.URI)
         console.error(err)
     })
 
+// INITIALISING MODELS
 require('./model/customer')
 require('./model/product')
 
-const app = express()
+// CALLING API REQUEST
+const buyer = require('./controller/buyer')
+const seller = require('./controller/seller')
+const product = require('./controller/product')
 
-app.get('/', (req, res) => {
-    res.send("now working properly")
-})
+
+const app = express()
+app.use(express.json())
+
+
+app.use('/buyer', buyer)
 
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`)
