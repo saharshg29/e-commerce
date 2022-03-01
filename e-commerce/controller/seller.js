@@ -26,7 +26,7 @@ router.post('/add', (req, res) => {
                                 password: hashedPassword,
                                 username,
                                 mobilenumber,
-                                accountype
+                                accountype:"seller"
                             })
                             customer.save()
                                 .then(user => {

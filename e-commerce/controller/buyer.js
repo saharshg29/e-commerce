@@ -26,7 +26,7 @@ router.post('/add', (req, res) => {
                                 password: hashedPassword,
                                 username,
                                 mobilenumber,
-                                accountype
+                                accountype: "buyer"
                             })
                             customer.save()
                                 .then(user => {
@@ -64,40 +64,6 @@ router.put('/edit/:id', (req, res) => {
         })
 
 })
-
-
-{
-    // router.post('/signin', (req, res) => {
-    //     const { email, password } = req.body
-    //     console.log("log in deails", req.body)
-    //     if (!email || !password) {
-    //         console.log('email', email)
-    //         return res.json({ error: "email or password is wrong" })
-    //     }
-
-    //     User.findOne({ email: email })
-    //         .then(savedUser => {
-    //             if (!savedUser) {
-    //                 res.status(400).json({ err: "User does not exist" })
-    //             }
-    //             bcrypt.compare(password, savedUser.password)
-    //                 .then(doMatch => {
-    //                     if (doMatch) {
-    //                         const token = jwt.sign({ _id: savedUser._id }, JWT_TOKEN)
-    //                         const { _id, name, email, followers, following, pic } = savedUser
-    //                         res.json({ token, user: { _id, name, email, followers, following } })
-    //                     }
-    //                     else {
-    //                         return res.status(422).json({ error: "Invalid Email or passwoord" })
-    //                     }
-    //                 })
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // })
-}
-
 
 // router.delete()
 
