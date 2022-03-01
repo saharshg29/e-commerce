@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken')
-const { JWT_TOKEN } = require('../config/keys')
 const mongoose = require('mongoose')
 const Customer = mongoose.model("Customer")
 
@@ -9,7 +8,7 @@ module.exports = (req, res, next) => {
         return res.status(401).json({ error: "You must be loged in" })
     }
     const token = authorization
-    jwt.verify(token, JWT_TOKEN, (err, payload) => {
+    jwt.verify(token, "tokyo@json", (err, payload) => {
         if (err) {
             return res.status(401).json({ error: "You must be authorized" })
         }
