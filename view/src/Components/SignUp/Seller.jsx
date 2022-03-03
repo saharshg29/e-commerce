@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function Seller() {
+  let navigate = useNavigate();
   return (
     <>
       <section className="h-100" style={{ backgroundColor: "#eee" }}>
@@ -16,51 +17,59 @@ export default function Seller() {
                       </p>
 
                       <form class="mx-1 mx-md-4">
-                        <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="d-flex btn flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="text"
-                              value = "Name"
+                              id="form3Example1c"
                               class="form-control"
-                              placeholder="Name"
                             />
+                            <label class="form-label" for="form3Example1c">
+                              Your Name
+                            </label>
                           </div>
                         </div>
 
-                        <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="d-flex btn flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="email"
-                              value = ""
+                              id="form3Example3c"
                               class="form-control"
-                              placeholder="E Mail"
                             />
+                            <label class="form-label" for="form3Example3c">
+                              Your Email
+                            </label>
                           </div>
                         </div>
 
-                        <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="d-flex btn flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="password"
-                              value = ""
+                              id="form3Example4c"
                               class="form-control"
-                              placeholder="Username"
                             />
+                            <label class="form-label" for="form3Example4c">
+                              Password
+                            </label>
                           </div>
                         </div>
 
-                        <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="d-flex btn flex-row align-items-center mb-4">
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="password"
-                              value = ""
+                              id="form3Example4cd"
                               class="form-control"
-                              placeholder="Password"
                             />
+                            <label class="form-label" for="form3Example4cd">
+                              Repeat your password
+                            </label>
                           </div>
                         </div>
 
@@ -69,6 +78,31 @@ export default function Seller() {
                             Register
                           </button>
                         </div>
+
+                        <span>
+                          <p>
+                            <h6 className="text-primary">
+                              Want to sell with us?
+                              <h5
+                                className="btn"
+                                style={{ display: "inline" }}
+                                onClick={() => navigate("/add-seller")}
+                              >
+                                Join
+                              </h5>
+                            </h6>
+                            <h5 className="text-primary">
+                              Already have an account?
+                              <h4
+                                className="btn"
+                                style={{ display: "inline" }}
+                                onClick={() => navigate("/signin")}
+                              >
+                                Log In
+                              </h4>
+                            </h5>
+                          </p>
+                        </span>
                       </form>
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
