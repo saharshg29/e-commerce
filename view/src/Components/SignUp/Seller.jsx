@@ -21,12 +21,10 @@ export default function Seller() {
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="text"
-                              id="form3Example1c"
+                              value = "Name"
                               class="form-control"
+                              placeholder="Name"
                             />
-                            <label class="form-label" for="form3Example1c">
-                              Your Name
-                            </label>
                           </div>
                         </div>
 
@@ -35,12 +33,10 @@ export default function Seller() {
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="email"
-                              id="form3Example3c"
+                              value = ""
                               class="form-control"
+                              placeholder="E Mail"
                             />
-                            <label class="form-label" for="form3Example3c">
-                              Your Email
-                            </label>
                           </div>
                         </div>
 
@@ -49,12 +45,10 @@ export default function Seller() {
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="password"
-                              id="form3Example4c"
+                              value = ""
                               class="form-control"
+                              placeholder="Username"
                             />
-                            <label class="form-label" for="form3Example4c">
-                              Password
-                            </label>
                           </div>
                         </div>
 
@@ -63,12 +57,10 @@ export default function Seller() {
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="password"
-                              id="form3Example4cd"
+                              value = ""
                               class="form-control"
+                              placeholder="Password"
                             />
-                            <label class="form-label" for="form3Example4cd">
-                              Repeat your password
-                            </label>
                           </div>
                         </div>
 
