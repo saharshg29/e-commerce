@@ -12,7 +12,7 @@ export default function SignIn() {
     if (!UserName || !Password) {
       navigate("/signin");
     }
-    fetch("/signin", {
+    fetch("/user/signin", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -25,10 +25,8 @@ export default function SignIn() {
     })
       .then((res) => {
         res.json();
-        console.log(res);
       })
       .then((data) => {
-        console.log(data);
         if (!data) {
           console.log("Seems like user could not found");
           navigate("/signin");
@@ -39,7 +37,6 @@ export default function SignIn() {
         }
       })
       .catch((err) => console.log("error while logging in"));
-    console.log({ UserName, Password });
   };
 
   return (
@@ -68,7 +65,7 @@ export default function SignIn() {
                               id="form3Example3c"
                               placeholder="Username"
                               className="form-control"
-                              onClick={(e) => setUserName(e.target.value)}
+                              onChange={(e) => setUserName(e.target.value)}
                             />
                           </div>
                         </div>
@@ -84,7 +81,7 @@ export default function SignIn() {
                               id="form3Example4c"
                               className="form-control"
                               placeholder="password"
-                              onClick={(e) => setPassword(e.target.value)}
+                              onChange={(e) => setPassword(e.target.value)}
                             />
                           </div>
                         </div>
