@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const Customer = mongoose.model('Customer')
+const Product = mongoose.model('Product')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -26,7 +27,7 @@ router.post('/add', (req, res) => {
                                 password: hashedPassword,
                                 username,
                                 mobilenumber,
-                                accountype:"seller"
+                                accountype: "seller"
                             })
                             customer.save()
                                 .then(user => {
