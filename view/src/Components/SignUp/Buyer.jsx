@@ -12,15 +12,31 @@ export default function Buyer() {
   const postData = () => {
     console.log({ Name, Password, Email, Mobilenumber, UserName });
 
-    // fetch('/buyer/add', {
-    //   method: "post",
-    //   headers: {
-
-    //   }
-
-    // })
-
-
+    fetch("/buyer/add", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: Name,
+        password: Password,
+        email: Email,
+        mobilenumber: Mobilenumber,
+        username: UserName,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          console.log("Signup failed");
+        } else {
+          console.log(data.messsage);
+          navigate("/signin");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
