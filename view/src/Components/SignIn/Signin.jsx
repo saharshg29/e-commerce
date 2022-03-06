@@ -31,9 +31,11 @@ export default function SignIn() {
         console.log(data);
         if (!data) {
           console.log("Seems like user could not found");
+          navigate("/signin");
         } else {
           localStorage.setItem("jwt", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
+          navigate(`/${accounttype}/signup`);
         }
       })
       .catch((err) => console.log("error while logging in"));

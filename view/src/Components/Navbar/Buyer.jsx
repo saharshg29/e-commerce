@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MDBIcon } from "mdb-react-ui-kit";
 
-export default function BuyerNav() {
+export default function Navbar() {
   let navigate = useNavigate();
   return (
     <>

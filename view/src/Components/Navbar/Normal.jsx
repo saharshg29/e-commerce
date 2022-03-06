@@ -5,7 +5,7 @@ export default function Normal() {
   let navigate = useNavigate();
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div className="container">
           <span className="navbar-brand me-2" onClick={() => navigate("/")}>
             <img

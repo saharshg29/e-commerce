@@ -10,12 +10,10 @@ function App() {
       <div>
         
         <General />
-       
       </div>
 
-
       {/* <Buyer /> */}
-      <Footer />
+       <Footer />
     </>
   );
 }
