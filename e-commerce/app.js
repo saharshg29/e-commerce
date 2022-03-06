@@ -30,7 +30,7 @@ app.use(express.json())
 
 app.use('/buyer', buyer)
 app.use('/seller', seller)
-app.use('', login)
+app.use('/user', login)
 
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`)
