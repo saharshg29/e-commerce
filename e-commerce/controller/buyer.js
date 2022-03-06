@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const Customer = mongoose.model('Customer')
+const Product = mongoose.model('Product')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -65,6 +66,18 @@ router.put('/edit/:id', (req, res) => {
 
 })
 
+//GET ALL POST
+router.get('/prod', (req, res) => {
+    Product.find()
+        .then(allProduct => {
+            res.json({ allProduct })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
 // router.delete()
+
 
 module.exports = router
