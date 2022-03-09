@@ -4,10 +4,10 @@ const mongoose = require('mongoose')
 const Customer = mongoose.model('Customer')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-var b = []
-var s = []
 
-router.post('/signin', (req, res) => {
+
+// Signin
+router.post('', (req, res) => {
     const { username, password, accounttype } = req.body
 
     if (!username || !password || !accounttype) {
@@ -28,7 +28,7 @@ router.post('/signin', (req, res) => {
                         if (ress) {
                             const token = jwt.sign({ _id: user._id }, "tokyo@json")
                             const { _id, name, email, username } = user
-                            res.json({ token, student: { _id, name, email, username } })
+                            res.json({ token: token, user: { _id, name, email, username } })
                         }
                         else {
                             return response.json({ success: false, message: 'passwords do not match' });
