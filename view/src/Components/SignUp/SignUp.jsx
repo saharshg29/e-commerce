@@ -12,6 +12,35 @@ export default function SignUp() {
 
   const postData = () => {
     console.log({ Name, Password, Email, Mobilenumber, UserName, accountype });
+    let readyData = {
+      Name,
+      Password,
+      Email,
+      Mobilenumber,
+      UserName,
+      accountype,
+    };
+    fetch("/signup", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(readyData),
+    })
+      .then((res) => {
+        res.json();
+      })
+      .then((data) => {
+        if (data.error) {
+          console.log(data.error);
+        } else {
+          console.log("Signup sucessfull");
+          navigate("signin");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
