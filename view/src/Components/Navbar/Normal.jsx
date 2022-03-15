@@ -43,7 +43,7 @@ export default function Normal() {
               <button
                 type="button"
                 className="btn btn-primary me-3"
-                onClick={() => navigate("/add-buyer")}
+                onClick={() => navigate("/sign-up")}
               >
                 Sign Up
               </button>

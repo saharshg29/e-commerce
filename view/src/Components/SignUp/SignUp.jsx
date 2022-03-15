@@ -1,42 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Seller() {
+export default function SignUp() {
   let navigate = useNavigate();
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
   const [Email, setEmail] = useState("");
   const [Mobilenumber, setMobilenumber] = useState("");
   const [UserName, setUserName] = useState("");
+  const [accountype, setAccountype] = useState("Buyer");
 
   const postData = () => {
-    console.log({ Name, Password, Email, Mobilenumber, UserName });
-
-    fetch("/seller/add", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: Name,
-        password: Password,
-        email: Email,
-        mobilenumber: Mobilenumber,
-        username: UserName,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          console.log("Signup failed");
-        } else {
-          console.log(data.messsage);
-          navigate("/signin");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    console.log({ Name, Password, Email, Mobilenumber, UserName, accountype });
   };
 
   return (
@@ -141,6 +116,20 @@ export default function Seller() {
                               onChange={(e) => setMobilenumber(e.target.value)}
                             />
                           </div>
+                        </div>
+
+                        <label className="form-label" htmlFor="form3Example7cd">
+                          Click to change Account Type
+                        </label>
+                        <div
+                          className="btn"
+                          onClick={() =>
+                            accountype === "Buyer"
+                              ? setAccountype("Seller")
+                              : setAccountype("Buyer")
+                          }
+                        >
+                          {accountype}
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

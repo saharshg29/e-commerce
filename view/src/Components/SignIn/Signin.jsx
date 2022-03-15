@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function SignIn() {
   const [UserName, setUserName] = useState("");
   const [Password, setPassword] = useState("");
-  const [accounttype, setAccounttype] = useState("");
+  const [accountype, setAccountype] = useState("Buyer");
 
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ export default function SignIn() {
       body: JSON.stringify({
         UserName,
         Password,
-        accounttype,
+        accountype,
       }),
     })
       .then((res) => {
@@ -33,7 +33,6 @@ export default function SignIn() {
         } else {
           localStorage.setItem("jwt", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
-          navigate(`/${accounttype}/signup`);
         }
       })
       .catch((err) => console.log("error while logging in"));
@@ -86,25 +85,18 @@ export default function SignIn() {
                           </div>
                         </div>
 
-                        <div>
-                          <span
-                            onClick={() => setAccounttype("Seller")}
-                            className=" btn"
-                          >
-                            Seller
-                            <input type="radio" name="acc" />
-                            <br />
-                          </span>
-
-                          <br />
-                          <span
-                            onClick={() => setAccounttype("Buyer")}
-                            className=" btn "
-                          >
-                            Buyer
-                            <input type="radio" name="acc" />
-                            <br />
-                          </span>
+                        <label className="form-label" htmlFor="form3Example7cd">
+                          Click to change Account Type
+                        </label>
+                        <div
+                          className="btn"
+                          onClick={() =>
+                            accountype === "Buyer"
+                              ? setAccountype("Seller")
+                              : setAccountype("Buyer")
+                          }
+                        >
+                          {accountype}
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
