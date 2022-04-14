@@ -8,7 +8,7 @@ function App() {
     <>
       <div>
 
-        <General />
+        {/* <General /> */}
         <Paths />
       </div>
 
