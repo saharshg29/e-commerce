@@ -1,10 +1,20 @@
 import "./index.scss";
 import Right from "./Right";
+import Nav from "./Navbar";
 
 const Buyer = () => {
   return (
     <>
-      <Right></Right>
+      <Nav></Nav>
+      <div className="parent row">
+        <div className="col-2"></div>
+        <div className="Content col-8 bg-dark text-light">
+          This is main content
+        </div>
+        <div className="Right col-2">
+          <Right></Right>
+        </div>
+      </div>
     </>
   );
 };
