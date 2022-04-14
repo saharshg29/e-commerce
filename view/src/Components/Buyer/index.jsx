@@ -8,12 +8,9 @@ const Buyer = () => {
       <Nav></Nav>
       <div className="parent row">
         <div className="col-2"></div>
-        <div className="  col-8 border-primary border-2 rounded border">
-          <div className="Content bg-dark text-light ">
-            This is main content
-          </div>
+        <div className="Content col-8 bg-dark text-light border-primary border-2 rounded border">
+          This is main content
         </div>
-
         <div className="Right col-2">
           <Right></Right>
         </div>
