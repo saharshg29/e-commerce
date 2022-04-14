@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const { ObjectID } = require('mongodb')
+const { ObjectId } = mongoose.Schema.Types
+
 
 const customerModel = mongoose.model("Customer", mongoose.Schema({
     name: {
@@ -16,6 +17,7 @@ const customerModel = mongoose.model("Customer", mongoose.Schema({
     },
     password: {
         type: String,
+        required: true
     },
     mobilenumber: {
         type: String,
@@ -23,18 +25,18 @@ const customerModel = mongoose.model("Customer", mongoose.Schema({
     },
     accountype: {
         type: String,
-        default: "User"
+        required: true
     },
     following: [{
-        type: ObjectID,
+        type: ObjectId,
         ref: "Customer"
     }],
     cart: [{
-        type: ObjectID,
+        type: ObjectId,
         ref: "Product"
     }],
     order: [{
-        type: ObjectID,
+        type: ObjectId,
         ref: "Product"
     }]
 }))

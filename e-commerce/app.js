@@ -17,11 +17,10 @@ mongoose.connect(URI.URI)
 require('./model/customer')
 require('./model/product')
 
-// CALLING API REQUEST
+// CALLING API ROUTES
 const buyer = require('./controller/buyer')
 const seller = require('./controller/seller')
-const product = require('./controller/product')
-const login = require('./controller/login')
+// const login = require('./controller/login')
 
 
 const app = express()
@@ -30,7 +29,8 @@ app.use(express.json())
 
 app.use('/buyer', buyer)
 app.use('/seller', seller)
-app.use('/user', login)
+app.use(require('./controller/auth'))
+
 
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`)

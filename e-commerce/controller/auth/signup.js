@@ -1,16 +1,10 @@
 const express = require('express')
-const router = express.Router()
-const mongoose = require('mongoose')
-const Customer = mongoose.model('Customer')
-const Product = mongoose.model('Product')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
 
-//USER SIGNUP --
-/*
-router.post('/add', (req, res) => {
+const router = express.Router()
+
+router.post('/sign-up', (req, res) => {
     const { name, email, password, username, mobilenumber, accountype } = req.body
-    if (!email || !name || !username || !mobilenumber) {
+    if (!email || !name || !username || !mobilenumber || !accountype) {
         return res.json({ error: "Please fill up all the fields" })
     }
     else {
@@ -44,42 +38,3 @@ router.post('/add', (req, res) => {
             })
     }
 })
-*/
-
-// GET EDITING USER PROFILE
-router.put('/edit/:id', (req, res) => {
-    const id = req.params.id
-    const { name, email, password, username, mobilenumber } = req.body
-    Customer.findByIdAndUpdate(
-        { _id: id },
-        {
-            $set: {
-                name, email, password, username, mobilenumber
-            }
-        },
-        { new: true }
-    )
-        .then(updated => {
-            res.status(200).json({ updated })
-        })
-        .catch(err => {
-            console.log(err)
-        })
-
-})
-
-//GET ALL POST
-router.get('/prod', (req, res) => {
-    Product.find()
-        .then(allProduct => {
-            res.json({ allProduct })
-        })
-        .catch(err => {
-            console.log(err)
-        })
-})
-
-// router.delete()
-
-
-module.exports = router

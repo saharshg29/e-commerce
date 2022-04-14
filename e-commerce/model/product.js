@@ -1,5 +1,5 @@
-const { ObjectID } = require('mongodb')
 const mongoose = require('mongoose')
+const { ObjectId } = mongoose.Schema.Types
 
 module.exports = mongoose.model("Product", new mongoose.Schema({
     name: {
@@ -11,7 +11,7 @@ module.exports = mongoose.model("Product", new mongoose.Schema({
         required: true
     },
     owner: [{
-        type: ObjectID,
+        type: ObjectId,
         ref: "Customer"
     }],
     description: {
@@ -20,13 +20,13 @@ module.exports = mongoose.model("Product", new mongoose.Schema({
     },
     likes: [
         {
-            type: ObjectID,
+            type: ObjectId,
             ref: "Customer"
         }
     ],
     orders: [
         {
-            type: ObjectID,
+            type: ObjectId,
             ref: "Customer"
         }
     ],
