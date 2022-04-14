@@ -2,18 +2,17 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Components/Footer";
 import General from "./Screens/General/General";
-import Buyer from "./Screens/Buyer/App";
-
+import Paths from "./Routes";
 function App() {
   return (
     <>
       <div>
-        
+
         <General />
+        <Paths />
       </div>
 
-      {/* <Buyer /> */}
-       <Footer />
+      <Footer />
     </>
   );
 }

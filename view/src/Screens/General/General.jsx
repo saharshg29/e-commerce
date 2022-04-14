@@ -23,9 +23,4 @@ export default function General() {
       </>
     );
   }
-  // return (
-  //   <>
-  //       <Normal></Normal>
-  //   </>
-  // )
 }
