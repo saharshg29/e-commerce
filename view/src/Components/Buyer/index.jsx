@@ -1,17 +1,20 @@
 import "./index.scss";
 import Right from "./Right";
 import Nav from "./Navbar";
+import Left from "./Left";
 
 const Buyer = () => {
   return (
     <>
       <Nav></Nav>
-      <div className="parent row">
-        <div className="col-2"></div>
-        <div className="Content col-8 bg-dark text-light border-primary border-2 rounded border">
+      <div className="parent row container">
+        <div className="col border-top border-left border-bottom border border-1 border-primary">
+          <Left></Left>
+        </div>
+        <div className="Content col-8 border-top border-bottom border border-1 border-primary p-1">
           This is main content
         </div>
-        <div className="Right col-2">
+        <div className="border-top border-left border-bottom border border-1 border-primary col">
           <Right></Right>
         </div>
       </div>

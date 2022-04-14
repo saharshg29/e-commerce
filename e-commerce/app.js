@@ -4,8 +4,7 @@ const PORT = process.env.PORT || 5000
 const URI = require('./Key')
 
 
-
-mongoose.connect(URI.URI)
+mongoose.connect("mongodb://localhost/Art&Cart")
     .then(() => {
         console.log("Connected to MongoDB")
     })
